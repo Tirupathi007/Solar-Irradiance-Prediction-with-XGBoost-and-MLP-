@@ -1,24 +1,24 @@
 # **Solar Irradiance Prediction**
 
-This project predicts solar irradiance using meteorological data from HI-SEAS (Sep-Dec 2016) with XGBoost and MultiLayer Perceptron (MLP) models.
+This project predicts solar irradiance using meteorological data from the HI-SEAS weather station (Sep-Dec 2016).
 
 ## **Project Overview**
-- **Objective**: Forecast solar radiation (W/m²) using features like temperature, humidity, and wind.
-- **Dataset**: HI-SEAS weather data with 32,661 records from Kaggle.
+- **Objective**: Forecast solar radiation (W/m²) using XGBoost and MLP models.
+- **Dataset**: HI-SEAS data with features like temperature, humidity, pressure, wind speed, and direction.
 
 ## **Methodology**
-- **Preprocessing**: Loaded data, handled missing values, and extracted features from timestamps.
-- **Feature Selection**: Used Correlation Matrix, SelectKBest, and ExtraTreesClassifier to identify key predictors.
-- **Feature Engineering**: Applied BoxCox, Log, Min-Max, and Standard transformations.
+- **ETL & EDA**: Loaded data, performed data wrangling, and used SelectKBest to identify key features.
+- **Data Transformations**: Applied Box-Cox, Log, Min-Max scaling, and standardization for preprocessing.
+- **Feature Selection**: Used Correlation Matrix, SelectKBest, and ExtraTreesClassifier to select relevant features.
 - **Models**:
-  - XGBoost: Ensemble model for regression.
-  - MLP: Neural network with Dense, Dropout, and Adam optimizer.
-- **Data Split**: Train-test split with standardization.
+  - XGBoost: Tree-based model for regression.
+  - MLP: Neural network with Dense, Dropout, and Activation layers.
 
 ## **Results**
-- **MLP Performance**: Achieved Mean Absolute Error (MAE) of 40.68 W/m².
-- **Feature Importance**: Temperature and time-based features were most predictive.
+- **XGBoost**: Achieved R² of 0.93, outperforming other models.
+- **MLP**: Recorded MAE of 40.68 on test set.
+- **Key Features**: Temperature and humidity identified as top predictors via SelectKBest.
 
 ## **Recommendations**
-- Prioritize MLP for accurate predictions; refine XGBoost with hyperparameter tuning.
-- Explore additional temporal features to enhance model performance.
+- Deploy XGBoost for high-accuracy solar irradiance predictions.
+- Optimize MLP architecture for improved performance.
