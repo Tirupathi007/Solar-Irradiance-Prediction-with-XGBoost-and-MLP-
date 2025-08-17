@@ -16,7 +16,7 @@ This project predicts solar irradiance using meteorological data from the HI-SEA
 
 ## **Results**
 - **XGBoost**: Achieved R² of 0.93, outperforming other models.
-- **MLP**: Recorded MAE of 40.68 on test set.
+- **MLP**(Multi Layer Perceptron): Recorded MAE of 40.68 on test set.
 - **Key Features**: Temperature and humidity identified as top predictors via SelectKBest.
 
 ## **Recommendations**
